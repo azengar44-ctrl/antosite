@@ -136,6 +136,13 @@ body {
   line-height: 1.5;
 }
 
+.service-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
 /* Section À propos et contact */
 .about-section,
 .contact-section {
