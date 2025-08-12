@@ -10,6 +10,7 @@ body {
     color: #fff;
     line-height: 1.6;
     overflow-x: hidden;
+    padding-top: 80px;
 }
 
 header {
@@ -57,7 +58,7 @@ h2 {
 }
 
 .hero {
-    height: 100vh;
+    min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,6 +67,7 @@ h2 {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    padding: 0 10%;
 }
 
 .hero-text h1 {

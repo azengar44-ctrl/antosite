@@ -8,26 +8,29 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
 
-window.addEventListener('scroll', function () {
-    const hero = document.querySelector('.hero');
-    let offset = window.pageYOffset;
-    hero.style.backgroundPositionY = offset * 0.5 + "px";
-});
+const hero = document.querySelector('.hero');
+if (hero) {
+    window.addEventListener('scroll', function () {
+        let offset = window.pageYOffset;
+        hero.style.backgroundPositionY = offset * 0.5 + "px";
+    });
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('#reservation form');
+    if (!form) return;
     form.setAttribute('action', 'https://formspree.io/f/mnqebjdd');
-    
+
     form.addEventListener('submit', async function (event) {
         event.preventDefault();
         const data = new FormData(form);
-        
+
         const response = await fetch(form.action, {
             method: 'POST',
             body: data,
             headers: { 'Accept': 'application/json' }
         });
-        
+
         if (response.ok) {
             alert('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.');
             form.reset();
