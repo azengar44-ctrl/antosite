@@ -1,41 +1,100 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comparateur de pièces 50&nbsp;cc – Trouvez le meilleur prix</title>
-  <!--
-    Ce site présente un comparateur fictif pour pièces 50&nbsp;cc. Il
-    fournit une interface de recherche et affiche des résultats ordonnés
-    par prix. Pour l'intégration réelle, il conviendra de relier le
-    moteur de recherche à une base de données ou à des API marchandes.
-  -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anto Moto - Réparation et entretien de motos et scooters. Réservez vos interventions en ligne.">
+    <title>Anto Moto - Atelier mécanique moto et scooter</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Trouvez vos pièces&nbsp;50&nbsp;cc au meilleur prix</h1>
-      <p>Comparez instantanément les offres des marchands pour votre deux‑roues</p>
-      <form id="search-form" class="search-form">
-        <input type="text" id="search-input" placeholder="Rechercher une pièce…" required>
-        <button type="submit" class="btn">Rechercher</button>
-      </form>
-    </div>
-  </header>
 
-  <section id="results" class="results-section">
-    <h2>Résultats de recherche</h2>
-    <div id="results-container">
-      <p>Saisissez une recherche pour afficher les meilleurs prix disponibles.</p>
-    </div>
-  </section>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">Anto Moto</div>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#services">Services</a>
+            <a href="#reservation">Réservation</a>
+            <a href="#actualites">Actualités</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-  <footer>
-    <p>&copy;&nbsp;2025 Comparateur&nbsp;50&nbsp;cc. Site de démonstration.</p>
-  </footer>
+    <!-- SECTION ACCUEIL -->
+    <section id="accueil" class="hero hidden">
+        <div class="hero-text">
+            <h1>Bienvenue chez Anto Moto</h1>
+            <p>Votre atelier mécanique spécialisé moto et scooter. Réservez vos réparations en ligne.</p>
+            <a href="#reservation" class="btn">Réserver maintenant</a>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- SECTION SERVICES -->
+    <section id="services" class="hidden">
+        <h2>Nos Services</h2>
+        <div class="services-grid">
+            <div class="service">
+                <h3>Scooters & Motos routières</h3>
+                <p>Révisions complètes uniquement.</p>
+            </div>
+            <div class="service">
+                <h3>Motos cross & scooters piste</h3>
+                <p>Tout sauf préparation amortisseur.</p>
+            </div>
+            <div class="service">
+                <h3>Conseils & entretien</h3>
+                <p>Conseils personnalisés et suivi de votre machine.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION RÉSERVATION -->
+    <section id="reservation" class="hidden">
+        <h2>Réserver une intervention</h2>
+        <form action="https://formspree.io/f/mnqebjdd" method="POST">
+            <input type="text" name="name" placeholder="Votre nom" required>
+            <input type="email" name="_replyto" placeholder="Votre email" required>
+            <input type="tel" name="phone" placeholder="Votre téléphone" required>
+            <select name="type" required>
+                <option value="">Type de véhicule</option>
+                <option value="Scooter">Scooter</option>
+                <option value="Moto routière">Moto routière</option>
+                <option value="Moto cross">Moto cross</option>
+                <option value="Scooter piste">Scooter piste</option>
+            </select>
+            <textarea name="message" placeholder="Description de l'intervention souhaitée" required></textarea>
+            <button type="submit">Envoyer la demande</button>
+        </form>
+    </section>
+
+    <!-- SECTION ACTUALITÉS -->
+    <section id="actualites" class="hidden">
+        <h2>Actualités Moto</h2>
+        <div class="news-grid">
+            <article>
+                <h3>Course 50cc à venir</h3>
+                <p>Découvrez les prochaines compétitions régionales.</p>
+            </article>
+            <article>
+                <h3>Conseils d’entretien</h3>
+                <p>Comment prolonger la durée de vie de votre moto.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section id="contact" class="hidden">
+        <h2>Contact</h2>
+        <p>Email : <a href="mailto:contact@antomoto.net">contact@antomoto.net</a></p>
+        <p>Suivez-nous sur nos réseaux sociaux</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Anto Moto - Tous droits réservés</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
