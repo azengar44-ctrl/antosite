@@ -1,0 +1,186 @@
+/*
+  Styles principaux pour le comparateur de pièces 50 cc. Les variables
+  définies dans :root facilitent l’harmonisation des couleurs et des tailles
+  sur l’ensemble du site.
+*/
+
+:root {
+  --primary-color: #2196f3;    /* Bleu clair principal pour les boutons et entêtes */
+  --secondary-color: #1976d2;  /* Bleu plus foncé pour les survols */
+  --dark-bg: #0d47a1;          /* Bleu très foncé pour le pied de page */
+  --light-text: #ffffff;       /* Couleur pour les textes sur fond sombre */
+  --max-width: 1200px;         /* Largeur maximale des contenus */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  background: #fff;
+  line-height: 1.6;
+}
+
+/* Héros avec image d'arrière‑plan et superposition sombre. */
+.hero {
+  background-image: url('images/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  color: var(--light-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 90%;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Formulaire de recherche */
+.search-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.search-form input {
+  flex: 1 1 300px;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-form button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-form button:hover {
+  background: var(--secondary-color);
+}
+
+.btn {
+  /* Class générique – surchargée si nécessaire */
+}
+
+/* Section résultats */
+.results-section {
+  padding: 4rem 1rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.results-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--dark-bg);
+}
+
+#results-container {
+  overflow-x: auto;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.results-table thead {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.results-table th,
+.results-table td {
+  padding: 1rem;
+  text-align: left;
+}
+
+.results-table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+.results-table tbody tr:hover {
+  background: #f5f5f5;
+}
+
+.results-table a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.results-table a:hover {
+  text-decoration: underline;
+}
+
+/* Pied de page */
+footer {
+  background: var(--dark-bg);
+  color: var(--light-text);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Responsivité pour petits écrans */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .search-form input {
+    flex-basis: 100%;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  .search-form button {
+    border-radius: 4px;
+    flex-basis: 100%;
+  }
+}
